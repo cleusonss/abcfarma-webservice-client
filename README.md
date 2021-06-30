@@ -3,16 +3,15 @@ Cliente para consumir webservice ABCFarma e atualizar um banco de dados.
 
 ---
 ###### Como rodar a aplicação
-# No terminal clone o projeto
-git clone 
+No terminal clone o projeto
+> git clone 
+Entre na pasta do projeto
+> cd abcfarma-api-cliente
 
-# Entre na pasta do projeto
-cd abcfarma-api-cliente
-
-# Execute a aplicação
-mvn clean compile exec:java
+Execute a aplicação
+> mvn clean compile exec:java
 
 ---
 ###### Resolvendo Problemas
-# 1. MS SQL Server e SSL
-# Habilite o TLSv1 e TLSv.1.1
+1. MS SQL Server e SSL
+> Habilite o TLSv1 e TLSv.1.1
