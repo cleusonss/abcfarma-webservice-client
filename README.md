@@ -5,6 +5,7 @@ Cliente para consumir webservice ABCFarma e atualizar um banco de dados.
 ###### Como rodar a aplicação
 No terminal clone o projeto
 > git clone 
+
 Entre na pasta do projeto
 > cd abcfarma-api-cliente
 
