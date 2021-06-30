@@ -4,7 +4,7 @@ Cliente para consumir webservice ABCFarma e atualizar um banco de dados.
 ---
 ###### Como rodar a aplicação
  No terminal clone o projeto
-```bash 
+```shell 
 git clone https://github.com/cleusonss/abcfarma-api-client.git 
 ```
 
@@ -14,7 +14,7 @@ cd abcfarma-api-cliente
 ```
 
  Execute a aplicação
-``` sh
+```shell
 mvn clean compile exec:java 
 ```
 
