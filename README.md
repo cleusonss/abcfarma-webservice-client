@@ -13,6 +13,6 @@ cd abcfarma-api-cliente
 mvn clean compile exec:java
 
 ---
-###Problemas
+###Resolvendo Problemas
 #1. MS SQL Server e SSL
 #Habilite o TLSv1 e TLSv.1.1
