@@ -1,2 +1,2 @@
-# ABCFARMA webservice API client
-Cliente para Consumir webservice ABCFarma e atualizar um Banco de Dados SQL
+# ABCFARMA webservice client
+Cliente para consumir webservice ABCFarma e atualizar um Banco de Dados SQL
