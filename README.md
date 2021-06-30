@@ -1,7 +1,6 @@
 # ABCFARMA webservice client
 Cliente para consumir webservice ABCFarma e atualizar um banco de dados.
 
----
 #### Instalação
  No terminal clone o projeto
 ```shell 
@@ -18,7 +17,6 @@ cd abcfarma-api-cliente
 mvn clean compile exec:java 
 ```
 
----
 #### Resolvendo Problemas
 1. MS SQL Server e SSL
 > Habilite o TLSv1 e TLSv.1.1
