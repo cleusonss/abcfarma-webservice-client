@@ -16,8 +16,6 @@ public class ConnectionU {
     public static Boolean connect() {
         String connectionUrl = "jdbc:sqlserver://" + server + ":" + port + ";databaseName=" + databasename + ";user="
                 + user + ";password=" + password;
-        ;
-
         try {
             connection = DriverManager.getConnection(connectionUrl);
             statement = connection.createStatement();
