@@ -6,7 +6,7 @@
 
     <groupId>br.inf.cs</groupId>
     <artifactId>abcfarma-webservice-client</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2.0</version>
 
     <name>abcfarma-webservice-client</name>
     <url>https://github.com/cleusonss/abcfarma-api-client</url>
