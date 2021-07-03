@@ -1,8 +1,11 @@
-# ABCFARMA webservice client
-Consome webservice ABCFARMA e atualiza um banco de dados.
-
-### Instalação
+# ABCFARMA Webservice Client
 ---
+ [[!Build Status]
+ (https://img.shields.io/appveyor/ci/thiagoloureiro/netcore-jwt-integrator-extension/master.svg)] (https://ci.appveyor.com/project/thiagoloureiro/netcore-jwt-integrator-extension)
+ Consome webservice ABCFARMA e atualiza um banco de dados.
+
+ ### Instalação
+ ---
 
  1. No terminal clone o projeto
 	```shell 
@@ -25,13 +28,13 @@ Consome webservice ABCFARMA e atualiza um banco de dados.
 	```
 
 
-### Versões Suportadas
----
- - Java 11.011 e superior
+ ### Versões Suportadas
+ ---
+ - Java 11 e superior
  - Maven 3.6.0 e superior
 
 
-### Resolvendo Problemas
----
-1. MS SQL Server e SSL
-> Habilite o TLSv1 e TLSv.1.1
+ ### Resolvendo Problemas
+ ---
+ 1. MS SQL Server e SSL
+ > Habilite o TLSv1 e TLSv.1.1
