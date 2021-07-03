@@ -55,7 +55,7 @@ public class ApiClientController {
         int i = 1;
         int last;
         do {
-            content = this.post(Runner.uri, this.getParameters(i));
+            content = this.post(Runner.URI, this.getParameters(i));
             jsonObject = new JSONObject(content);
             if (paginaService.isOK(jsonObject)) {
                 paginaService.setPagina(jsonObject);

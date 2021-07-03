@@ -12,7 +12,7 @@ import java.util.Properties;
 
 public class Runner {
 
-    public static String uri = "http://webserviceabcfarma.org.br/webservice/";
+    public static final String URI = "http://webserviceabcfarma.org.br/webservice/";
     public static Associado associado = new Associado();
     public static SoftwareHouse softwareHouse = new SoftwareHouse();
 
