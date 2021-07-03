@@ -17,29 +17,29 @@
  #### Installation
  ----
 
- 1. Clone this project
+ 1. Clone this project.
 	```shell 
 	git clone https://github.com/cleusonss/abcfarma-api-client.git 
 	```
 
- 2. Enter the project directory
+ 2. Enter the project directory.
 	```shell
 	cd abcfarma-api-client 
 	```
  3. Rename `configuration_template.properties` to `configuration.properties`
 
 
- 4. Insert que vars values into `configuration.properties` file
+ 4. Insert the parameters values into `configuration.properties` file.
 
 
- 5. Execute the application
+ 5. Execute the application.
 	```shell
 	mvn clean compile exec:java 
 	```
  
  #### Configuration
  ----
- You can configure the following parameters inside the `configuration.properties`. All the parameters are mandatory.
+ You can configure the following parameters into the `configuration.properties` file. All the parameters are mandatory.
 
    ###### ABCFARMA Associated data
    *`cnpj`* : Associated CNPJ
