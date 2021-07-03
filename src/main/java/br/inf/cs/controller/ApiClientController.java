@@ -21,8 +21,6 @@ import java.util.List;
 
 public class ApiClientController {
 
-    private PaginaService paginaService = new PaginaService();
-
     public List<NameValuePair> getParameters(Integer pagina) {
         List<NameValuePair> parameters = new ArrayList<>();
         parameters.add(new BasicNameValuePair("cnpj_cpf", Runner.associado.getCnpj()));
@@ -50,13 +48,14 @@ public class ApiClientController {
     }
 
     public void postAllPaginas() throws IOException {
+        PaginaService paginaService = new PaginaService();
         Pagina pagina;
         JSONObject jsonObject;
         String content;
         int i = 1;
         int last;
         do {
-            content = this.post(Runner.uri, this.getParameters(i));
+            content = this.post(Runner.URI, this.getParameters(i));
             jsonObject = new JSONObject(content);
             if (paginaService.isOK(jsonObject)) {
                 paginaService.setPagina(jsonObject);
