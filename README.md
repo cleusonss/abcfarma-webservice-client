@@ -15,7 +15,6 @@
 </p>
 
  ## Installation
- ----
 
  1. Clone this project.
 	```shell 
@@ -37,8 +36,7 @@
 	mvn clean compile exec:java 
 	```
  
- #### Configuration
- ----
+ ## Configuration
  You can configure the following parameters into the `configuration.properties` file. All the parameters are mandatory.
 
    ###### ABCFARMA Associated data
@@ -61,20 +59,20 @@
 
    *`password`* : Database user password
 
- #### Requirements
- -----
+ ## Requirements
+ 
  - [Java 11](https://adoptopenjdk.net/index.html) e superior
  - [Maven 3.6.0](https://maven.apache.org/index.html) e superior
 
 
- #### Troubleshooting
- ----
+ ## Troubleshooting
+ 
  1. MS SQL Server and SSL
  > [Enable the TLSv1.0](https://asyncstream.com/tutorials/java-tlsv10-not-accepted-by-client-preferences/)
 
 
-#### Author
-----
+## Author
+
 Made with ❤ by Cleuson Santos 👋🏽 Make a contact!
 
 [![Twitter Badge](https://img.shields.io/badge/-@cleusonss-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/cleusonss)](https://twitter.com/cleusonss) 
