@@ -2,7 +2,7 @@
 Consome webservice ABCFARMA e atualiza um banco de dados.
 
 ### Instalação
---
+---
 
  1. No terminal clone o projeto
 	```shell 
@@ -13,20 +13,25 @@ Consome webservice ABCFARMA e atualiza um banco de dados.
 	```shell
 	cd abcfarma-api-client 
 	```
+ 3. Renomei o ```configuration_template.properties``` para ```configuration.properties```
 
- 3. Execute a aplicação
+
+ 4. Insira os valores das variáveis no arquivo ```configuration.properties```
+
+
+ 5. Execute a aplicação
 	```shell
 	mvn clean compile exec:java 
 	```
 
 
 ### Versões Suportadas
---
+---
  - Java 11.011 e superior
  - Maven 3.6.0 e superior
 
 
 ### Resolvendo Problemas
---
+---
 1. MS SQL Server e SSL
 > Habilite o TLSv1 e TLSv.1.1
