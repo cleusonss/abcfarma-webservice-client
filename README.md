@@ -1,7 +1,8 @@
 # ABCFARMA Webservice Client
 ---
- [[!Build Status]
- (https://img.shields.io/appveyor/ci/thiagoloureiro/netcore-jwt-integrator-extension/master.svg)] (https://ci.appveyor.com/project/thiagoloureiro/netcore-jwt-integrator-extension)
+ ![](https://img.shields.io/badge/Java-11-green?logo=Java&style=flat)
+ ![](https://img.shields.io/badge/Maven-3.6.0-green?logo=ApacheMaven&style=flat)
+ 
  Consome webservice ABCFARMA e atualiza um banco de dados.
 
  ### Instalação
