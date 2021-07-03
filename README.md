@@ -25,10 +25,10 @@
 	```shell
 	cd abcfarma-api-client 
 	```
- 3. Rename `configuration_template.properties` to `configuration.properties`
+ 3. Rename the `configuration_template.properties` to `configuration.properties`
 
 
- 4. Insert the parameters values into `configuration.properties` file.
+ 4. Insert the parameters values into the `configuration.properties` file.
 
 
  5. Execute the application.
@@ -39,7 +39,7 @@
  ## Configuration
  You can configure the following parameters into the `configuration.properties` file. All the parameters are mandatory.
 
-   ###### ABCFARMA Associated data
+   ###### ABCFARMA Associated Information
    *`cnpj`* : Associated CNPJ
 
    *`senha`* : Associated password
@@ -48,7 +48,7 @@
 
 
 
-   ###### ABCFARMA Associated data
+   ###### Database Information
    *`server`* : Database server IP address ou FQDN
 
    *`port`* : Database server port
@@ -61,14 +61,17 @@
 
  ## Requirements
  
- - [Java 11](https://adoptopenjdk.net/index.html) e superior
- - [Maven 3.6.0](https://maven.apache.org/index.html) e superior
+ - [Java 11](https://adoptopenjdk.net/index.html) and above.
+ - [Maven 3.6.0](https://maven.apache.org/index.html) and above.
 
 
  ## Troubleshooting
  
  1. MS SQL Server and SSL
  > [Enable the TLSv1.0](https://asyncstream.com/tutorials/java-tlsv10-not-accepted-by-client-preferences/)
+
+ 2. ABCFARMA error 500: Access limit exceeded.
+ > Contact the ABCFARMA support and request access release.
 
 
 ## Author
