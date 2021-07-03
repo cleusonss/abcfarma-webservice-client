@@ -6,7 +6,9 @@ import br.inf.cs.data.ConnectionU;
 import br.inf.cs.model.Associado;
 import br.inf.cs.model.SoftwareHouse;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
 
 public class Runner {
 
@@ -16,15 +18,19 @@ public class Runner {
 
     public static void main(String[] args) throws IOException {
 
-        Runner.associado.setCnpj("");
-        Runner.associado.setSenha("");
-        Runner.softwareHouse.setCnpj("");
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("configuration.properties"));
 
-        ConnectionU.server = "";
-        ConnectionU.port = "";
-        ConnectionU.databasename = "";
-        ConnectionU.user = "";
-        ConnectionU.password = "";
+
+        Runner.associado.setCnpj(properties.getProperty("cnpj"));
+        Runner.associado.setSenha(properties.getProperty("senha"));
+        Runner.softwareHouse.setCnpj(properties.getProperty("cnpj_sh"));
+
+        ConnectionU.server = properties.getProperty("server");
+        ConnectionU.port = properties.getProperty("port");
+        ConnectionU.databasename = properties.getProperty("name");
+        ConnectionU.user = properties.getProperty("user");
+        ConnectionU.password = properties.getProperty("password");
 
         ApiClientController apiClientController = new ApiClientController();
         apiClientController.postAllPaginas();

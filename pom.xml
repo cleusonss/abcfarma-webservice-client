@@ -5,12 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.inf.cs</groupId>
-    <artifactId>abcfarma</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>abcfarma-webservice-client</artifactId>
+    <version>1.2.0</version>
 
-    <name>abcfarma</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <name>abcfarma-webservice-client</name>
+    <url>https://github.com/cleusonss/abcfarma-api-client</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -155,6 +154,7 @@
                         </execution>
                     </executions>
                     <configuration>
+                        <!--suppress UnresolvedMavenProperty -->
                         <apiToken>${env.SNYK_TOKEN}</apiToken>
                         <args>
                             <arg>--all-projects</arg>
