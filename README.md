@@ -18,12 +18,12 @@
 
  1. Clone this project.
 	```shell 
-	git clone https://github.com/cleusonss/abcfarma-api-client.git 
+	git clone https://github.com/cleusonss/abcfarma-webservice-client.git
 	```
 
  2. Enter the project directory.
 	```shell
-	cd abcfarma-api-client 
+	cd abcfarma-webservice-client 
 	```
  3. Rename the `configuration_template.properties` to `configuration.properties`
 
