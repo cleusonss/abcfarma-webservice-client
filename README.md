@@ -2,8 +2,8 @@
 
  [![Java](https://img.shields.io/badge/Java-11-blue?logo=Java&style=flat)](https://adoptopenjdk.net/index.html)
  [![Maven](https://img.shields.io/badge/Maven-3.8.1-blue?logo=ApacheMaven&style=flat)](https://maven.apache.org/index.html)
- ![Snyk](https://img.shields.io/badge/Snyk-passed-green?logo=Snyk&style=flat)
- ![License](https://img.shields.io/badge/License-Apache_2.0-green?style=flat)
+ [![Snyk](https://img.shields.io/badge/Snyk-passed-green?logo=Snyk&style=flat)](https://snyk.io/)
+ [![License](https://img.shields.io/badge/License-Apache_2.0-green?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
  Consume the ABCFARMA webservice and update a database.
 
