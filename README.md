@@ -1,7 +1,7 @@
 # ABCFARMA Webservice Client
 
  [![Java](https://img.shields.io/badge/Java-11-blue?logo=Java&style=flat)](https://adoptopenjdk.net/index.html)
- [![Maven](https://img.shields.io/badge/Maven-3.6.0-blue?logo=ApacheMaven&style=flat)](https://maven.apache.org/index.html)
+ [![Maven](https://img.shields.io/badge/Maven-3.8.1-blue?logo=ApacheMaven&style=flat)](https://maven.apache.org/index.html)
  ![Snyk](https://img.shields.io/badge/Snyk-passed-green?logo=Snyk&style=flat)
  ![License](https://img.shields.io/badge/License-Apache_2.0-green?style=flat)
 
@@ -63,7 +63,7 @@
  ## Requirements
  
  - [Java 11](https://adoptopenjdk.net/index.html) or above.
- - [Maven 3.6.0](https://maven.apache.org/index.html) or above.
+ - [Maven 3.8.0](https://maven.apache.org/index.html) or above.
 
 
  ## Troubleshooting
