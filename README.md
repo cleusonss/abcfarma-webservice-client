@@ -3,6 +3,7 @@
  [![Java](https://img.shields.io/badge/Java-11-blue?logo=Java&style=flat)](https://adoptopenjdk.net/index.html)
  [![Maven](https://img.shields.io/badge/Maven-3.6.0-blue?logo=ApacheMaven&style=flat)](https://maven.apache.org/index.html)
  ![Snyk](https://img.shields.io/badge/Snyk-passed-green?logo=Snyk&style=flat)
+ ![License](https://img.shields.io/badge/License-Apache_2.0-green?style=flat)
 
  Consume the ABCFARMA webservice and update a database.
 
@@ -49,7 +50,7 @@
 
 
    ###### Database Information
-   *`server`* : Database server IP address ou FQDN
+   *`server`* : Database server IP address or FQDN
 
    *`port`* : Database server port
 
@@ -61,8 +62,8 @@
 
  ## Requirements
  
- - [Java 11](https://adoptopenjdk.net/index.html) and above.
- - [Maven 3.6.0](https://maven.apache.org/index.html) and above.
+ - [Java 11](https://adoptopenjdk.net/index.html) or above.
+ - [Maven 3.6.0](https://maven.apache.org/index.html) or above.
 
 
  ## Troubleshooting
@@ -76,8 +77,8 @@
 
 ## Author
 
-Made with ❤ by Cleuson Santos 👋🏽 Make a contact!
+Made with ❤ by Cleuson Santos :wave: Make a contact!
 
 [![Twitter Badge](https://img.shields.io/badge/-@cleusonss-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/cleusonss)](https://twitter.com/cleusonss) 
-[![Linkedin Badge](https://img.shields.io/badge/-CleusonSantos-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/cleuson-santos-7391aa53/)](https://www.linkedin.com/in/cleuson-santos-7391aa53/)
+[![Linkedin Badge](https://img.shields.io/badge/-Cleuson_Santos-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/cleuson-santos-7391aa53/)](https://www.linkedin.com/in/cleuson-santos-7391aa53/)
 [![Gmail Badge](https://img.shields.io/badge/-cleusonss@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:cleusonss@gmail.com)](mailto:cleusonss@gmail.com)
