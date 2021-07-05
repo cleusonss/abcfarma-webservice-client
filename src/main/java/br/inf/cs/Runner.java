@@ -1,4 +1,4 @@
-/***
+/*
  * Copyright 2021 Cleuson Santos <cleusonss@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,13 +12,14 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ***/
+ */
 
 package br.inf.cs;
 
 import br.inf.cs.controller.ApiClientController;
 import br.inf.cs.controller.FileController;
 import br.inf.cs.data.ConnectionU;
+import br.inf.cs.logging.Logger;
 import br.inf.cs.model.Associado;
 import br.inf.cs.model.SoftwareHouse;
 

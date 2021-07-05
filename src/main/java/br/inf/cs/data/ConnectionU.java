@@ -1,4 +1,4 @@
-/***
+/*
  * Copyright 2021 Cleuson Santos <cleusonss@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,9 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ***/
+ */
 
 package br.inf.cs.data;
+
+import br.inf.cs.logging.Logger;
 
 import java.sql.*;
 
@@ -40,8 +42,7 @@ public class ConnectionU {
             System.out.println("error: " + e.getMessage());
             if (e.getMessage().contains(
                     "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]")) {
-                System.out.println(
-                        "Acesse: https://asyncstream.com/tutorials/java-tlsv10-not-accepted-by-client-preferences/");
+                Logger.warning(ConnectionU.class, "Acesse: https://asyncstream.com/tutorials/java-tlsv10-not-accepted-by-client-preferences/");
             }
         }
 
@@ -49,31 +50,31 @@ public class ConnectionU {
 
     }
 
-    public static void close(){
-        try{
+    public static void close() {
+        try {
             if (!connection.isClosed()) {
                 statement.close();
                 connection.close();
             }
-        }catch (SQLException e){
-            System.out.println("Error: " + e.getMessage());
+        } catch (SQLException e) {
+            Logger.warning(ConnectionU.class, "Error: " + e.getMessage());
         }
     }
 
-    public static ResultSet executeQuery(String query){
+    public static ResultSet executeQuery(String query) {
         try {
             return statement.executeQuery(query);
-        }catch (SQLException e){
-            System.out.println("Error: " + e.getMessage());
+        } catch (SQLException e) {
+            Logger.warning(ConnectionU.class, "Error: " + e.getMessage());
             return null;
         }
     }
 
-    public static Integer executeUpdate(String update){
+    public static Integer executeUpdate(String update) {
         try {
             return statement.executeUpdate(update);
-        }catch (SQLException e){
-            System.out.println("Error: " + e.getMessage());
+        } catch (SQLException e) {
+            Logger.warning(ConnectionU.class, "Error: " + e.getMessage());
             return 0;
         }
     }

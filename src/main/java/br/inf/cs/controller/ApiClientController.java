@@ -1,4 +1,4 @@
-/***
+/*
  * Copyright 2021 Cleuson Santos <cleusonss@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,11 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ***/
+ */
 
 package br.inf.cs.controller;
 
 import br.inf.cs.Runner;
+import br.inf.cs.logging.Logger;
 import br.inf.cs.model.Pagina;
 import br.inf.cs.service.PaginaService;
 import org.apache.http.NameValuePair;
@@ -54,7 +55,7 @@ public class ApiClientController {
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
              CloseableHttpResponse response = httpClient.execute(post)) {
 
-            // Retornar String JSON contendo código
+            // Retorna String JSON contendo código
             if (response.getStatusLine().getStatusCode() == 200) {
                 return EntityUtils.toString(response.getEntity());
             } else {
@@ -78,7 +79,7 @@ public class ApiClientController {
                 pagina = paginaService.getPagina();
                 last = pagina.getTotal_paginas();
 
-                System.out.println("Pagina: " + pagina.getPagina() + "/" + pagina.getTotal_paginas());
+                Logger.info(this.getClass(), "Pagina: " + pagina.getPagina() + "/" + pagina.getTotal_paginas());
                 this.write(i, content);
             } else {
                 System.out.println(content);
@@ -93,7 +94,7 @@ public class ApiClientController {
             String fileName = "abc_farma_pagina_" + i + ".json";
             Files.writeString(Paths.get(fileName), content);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            Logger.warning(this.getClass(), e.getMessage());
         }
     }
 }
