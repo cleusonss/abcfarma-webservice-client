@@ -17,7 +17,7 @@
 package br.inf.cs.service;
 
 import br.inf.cs.dao.ProductDao;
-import br.inf.cs.data.ConnectionU;
+import br.inf.cs.data.DataSource;
 import br.inf.cs.logging.Logger;
 import br.inf.cs.model.Produto;
 import org.json.JSONArray;
@@ -29,7 +29,7 @@ public class ProductService {
     Produto produto;
 
     public void setPMC17(JSONArray jsonArray) {
-        if (Boolean.TRUE.equals(ConnectionU.connect())) {
+        if (Boolean.TRUE.equals(DataSource.connect())) {
             produto = new Produto();
             for (Object object : jsonArray) {
                 String pmc17 = ((JSONObject) object).getString("PMC_17");
@@ -46,11 +46,11 @@ public class ProductService {
                 produto = new Produto();
             }
         }
-        ConnectionU.close();
+        DataSource.close();
     }
 
     public void getCheckRows(JSONArray jsonArray) {
-        if (Boolean.TRUE.equals(ConnectionU.connect())) {
+        if (Boolean.TRUE.equals(DataSource.connect())) {
             produto = new Produto();
             String ean;
             Integer rows;
@@ -64,12 +64,12 @@ public class ProductService {
                 }
             }
         }
-        ConnectionU.close();
+        DataSource.close();
 
     }
 
     public void setPF17(JSONArray jsonArray) {
-        if (Boolean.TRUE.equals(ConnectionU.connect())) {
+        if (Boolean.TRUE.equals(DataSource.connect())) {
             produto = new Produto();
             for (Object object : jsonArray) {
                 String pf17 = ((JSONObject) object).getString("PF_17");
@@ -86,6 +86,6 @@ public class ProductService {
                 produto = new Produto();
             }
         }
-        ConnectionU.close();
+        DataSource.close();
     }
 }

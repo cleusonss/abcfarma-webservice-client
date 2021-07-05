@@ -18,8 +18,7 @@ package br.inf.cs;
 
 import br.inf.cs.controller.ApiClientController;
 import br.inf.cs.controller.FileController;
-import br.inf.cs.data.ConnectionU;
-import br.inf.cs.logging.Logger;
+import br.inf.cs.data.DataSource;
 import br.inf.cs.model.Associado;
 import br.inf.cs.model.SoftwareHouse;
 
@@ -43,11 +42,11 @@ public class Runner {
         Runner.associado.setSenha(properties.getProperty("senha"));
         Runner.softwareHouse.setCnpj(properties.getProperty("cnpj_sh"));
 
-        ConnectionU.server = properties.getProperty("server");
-        ConnectionU.port = properties.getProperty("port");
-        ConnectionU.databasename = properties.getProperty("name");
-        ConnectionU.user = properties.getProperty("user");
-        ConnectionU.password = properties.getProperty("password");
+        DataSource.server = properties.getProperty("server");
+        DataSource.port = properties.getProperty("port");
+        DataSource.databasename = properties.getProperty("name");
+        DataSource.user = properties.getProperty("user");
+        DataSource.password = properties.getProperty("password");
 
         ApiClientController apiClientController = new ApiClientController();
         apiClientController.postAllPaginas();

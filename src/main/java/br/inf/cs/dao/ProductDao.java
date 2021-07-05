@@ -16,7 +16,7 @@
 
 package br.inf.cs.dao;
 
-import br.inf.cs.data.ConnectionU;
+import br.inf.cs.data.DataSource;
 import br.inf.cs.logging.Logger;
 import br.inf.cs.model.Produto;
 
@@ -40,7 +40,7 @@ public class ProductDao {
         String update = String.format(sb.toString(), produto.getPMC_17(), produto.getEAN());
         Integer rows = getRows(produto);
         if(rows == 1){
-            return ConnectionU.executeUpdate(update);
+            return DataSource.executeUpdate(update);
         }else{
             if(rows > 1) {
                 Logger.warning(this.getClass(), "Error: EAN " + produto.getEAN() + "possui " + rows + "registros");
@@ -63,7 +63,7 @@ public class ProductDao {
         String update = String.format(sb.toString(), produto.getPF_17(), produto.getEAN());
         Integer rows = getRows(produto);
         if(rows == 1){
-            return ConnectionU.executeUpdate(update);
+            return DataSource.executeUpdate(update);
         }
         else{
             if(rows > 1) {
@@ -83,7 +83,7 @@ public class ProductDao {
         String query = String.format(sb.toString(), produto.getEAN());
         
         try{
-            ResultSet rs = ConnectionU.executeQuery(query);
+            ResultSet rs = DataSource.executeQuery(query);
             if (rs != null) {
                 int i = 0;
                 while(rs.next()){

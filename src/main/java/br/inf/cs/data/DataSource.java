@@ -20,7 +20,7 @@ import br.inf.cs.logging.Logger;
 
 import java.sql.*;
 
-public class ConnectionU {
+public class DataSource {
 
     public static String server;
     public static String port;
@@ -28,8 +28,22 @@ public class ConnectionU {
     public static String user;
     public static String password;
 
-    public static Connection connection;
-    public static Statement statement;
+    public static Connection connection = null;
+    public static Statement statement = null;
+
+    private static DataSource dataSource = null;
+
+    static {
+        try {
+            dataSource = new DataSource();
+        } catch (Exception e) {
+            throw new RuntimeException("Something gone Bad while creating singleton object");
+        }
+    }
+
+    public static DataSource getInstance() {
+        return dataSource;
+    }
 
     public static Boolean connect() {
         String connectionUrl = "jdbc:sqlserver://" + server + ":" + port + ";databaseName=" + databasename + ";user="
@@ -39,10 +53,10 @@ public class ConnectionU {
             statement = connection.createStatement();
             return true;
         } catch (SQLException e) {
-            System.out.println("error: " + e.getMessage());
+            Logger.warning(DataSource.class, "error: " + e.getMessage());
             if (e.getMessage().contains(
                     "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]")) {
-                Logger.warning(ConnectionU.class, "Acesse: https://asyncstream.com/tutorials/java-tlsv10-not-accepted-by-client-preferences/");
+                Logger.warning(DataSource.class, "Acesse: https://asyncstream.com/tutorials/java-tlsv10-not-accepted-by-client-preferences/");
             }
         }
 
@@ -57,7 +71,7 @@ public class ConnectionU {
                 connection.close();
             }
         } catch (SQLException e) {
-            Logger.warning(ConnectionU.class, "Error: " + e.getMessage());
+            Logger.warning(DataSource.class, "Error: " + e.getMessage());
         }
     }
 
@@ -65,7 +79,7 @@ public class ConnectionU {
         try {
             return statement.executeQuery(query);
         } catch (SQLException e) {
-            Logger.warning(ConnectionU.class, "Error: " + e.getMessage());
+            Logger.warning(DataSource.class, "Error: " + e.getMessage());
             return null;
         }
     }
@@ -74,7 +88,7 @@ public class ConnectionU {
         try {
             return statement.executeUpdate(update);
         } catch (SQLException e) {
-            Logger.warning(ConnectionU.class, "Error: " + e.getMessage());
+            Logger.warning(DataSource.class, "Error: " + e.getMessage());
             return 0;
         }
     }
