@@ -18,14 +18,14 @@ package br.inf.cs.dao;
 
 import br.inf.cs.data.DataSource;
 import br.inf.cs.logging.Logger;
-import br.inf.cs.model.Produto;
+import br.inf.cs.model.ProdutoAbcFarma;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ProductDao {
 
-    public Integer setPMC17(Produto produto){
+    public Integer setPMC17(ProdutoAbcFarma produtoAbcFarma){
         StringBuilder sb = new StringBuilder();
         sb.append("update produto_pmc ");
         sb.append("set ");
@@ -37,19 +37,19 @@ public class ProductDao {
         sb.append("and ");
         sb.append(" aliquota = 17;");
 
-        String update = String.format(sb.toString(), produto.getPMC_17(), produto.getEAN());
-        Integer rows = getRows(produto);
+        String update = String.format(sb.toString(), produtoAbcFarma.getPMC_17(), produtoAbcFarma.getEAN());
+        Integer rows = getRows(produtoAbcFarma);
         if(rows == 1){
             return DataSource.executeUpdate(update);
         }else{
             if(rows > 1) {
-                Logger.warning(this.getClass(), "Error: EAN " + produto.getEAN() + "possui " + rows + "registros");
+                Logger.warning(this.getClass(), "Error: EAN " + produtoAbcFarma.getEAN() + "possui " + rows + "registros");
             }
             return 0;
         }
     }
 
-    public Integer setPF17(Produto produto){
+    public Integer setPF17(ProdutoAbcFarma produtoAbcFarma){
         StringBuilder sb = new StringBuilder();
         sb.append("update produto ");
         sb.append("set ");
@@ -60,27 +60,27 @@ public class ProductDao {
         sb.append("and ");
         sb.append(" aliquota_abc_farma = 17;");
 
-        String update = String.format(sb.toString(), produto.getPF_17(), produto.getEAN());
-        Integer rows = getRows(produto);
+        String update = String.format(sb.toString(), produtoAbcFarma.getPF_17(), produtoAbcFarma.getEAN());
+        Integer rows = getRows(produtoAbcFarma);
         if(rows == 1){
             return DataSource.executeUpdate(update);
         }
         else{
             if(rows > 1) {
-                Logger.warning(this.getClass(), "Error: EAN " + produto.getEAN() + "possui " + rows + "registros");
+                Logger.warning(this.getClass(), "Error: EAN " + produtoAbcFarma.getEAN() + "possui " + rows + "registros");
             }
             return 0;
         }
     }
 
-    public Integer getRows(Produto produto){
+    public Integer getRows(ProdutoAbcFarma produtoAbcFarma){
         StringBuilder sb = new StringBuilder();
         sb.append("select distinct codigo ");
         sb.append("from produto ");
         sb.append("where ");
         sb.append("codigo_barra = '%s'");
 
-        String query = String.format(sb.toString(), produto.getEAN());
+        String query = String.format(sb.toString(), produtoAbcFarma.getEAN());
         
         try{
             ResultSet rs = DataSource.executeQuery(query);
