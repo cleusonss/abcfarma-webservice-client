@@ -16,76 +16,81 @@
 
 package br.inf.cs.service;
 
-import br.inf.cs.dao.ProductDao;
-import br.inf.cs.data.ConnectionU;
-import br.inf.cs.logging.Logger;
+import br.inf.cs.data.daoImpl.ProdutoDaoImpl;
+import br.inf.cs.data.daoImpl.ProdutoPmcDaoImpl;
 import br.inf.cs.model.Produto;
+import br.inf.cs.model.ProdutoPmc;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 public class ProductService {
 
-    ProductDao productDao = new ProductDao();
-    Produto produto;
+    ProdutoDaoImpl produtoDao = new ProdutoDaoImpl();
+    ProdutoPmcDaoImpl produtoPmcDao = new ProdutoPmcDaoImpl();
 
-    public void setPMC17(JSONArray jsonArray) {
-        if (Boolean.TRUE.equals(ConnectionU.connect())) {
-            produto = new Produto();
-            for (Object object : jsonArray) {
-                String pmc17 = ((JSONObject) object).getString("PMC_17");
-                String ean = ((JSONObject) object).getString("EAN");
+    public void saveJsonOnDatabase(JSONArray jsonArray, String aliquota){
 
-                if (!pmc17.equals("0.00")) {
-                    produto.setEAN(ean);
-                    produto.setPMC_17(pmc17);
-                    Integer i = productDao.setPMC17(produto);
-                    if (i > 0) {
-                        Logger.info(this.getClass(), "[" + i + "] EAN: " + produto.getEAN() + " PMC17: " + produto.getPMC_17());
+        long ean;
+        double pmc;
+        double pf;
+        String ncm;
+
+        ProdutoPmc produtoPmc;
+
+        for (Object object : jsonArray) {
+            switch (aliquota){
+                case "17":
+                    ean = ((JSONObject) object).getLong("EAN");
+                    pmc = ((JSONObject) object).getDouble("PMC_"+aliquota);
+                    pf = ((JSONObject) object).getDouble("PF_"+aliquota);
+                    try{
+                    ncm = ((JSONObject) object).getString("NCM");}
+                    catch (JSONException e){
+                        ncm = null;
                     }
-                }
-                produto = new Produto();
-            }
-        }
-        ConnectionU.close();
-    }
 
-    public void getCheckRows(JSONArray jsonArray) {
-        if (Boolean.TRUE.equals(ConnectionU.connect())) {
-            produto = new Produto();
-            String ean;
-            Integer rows;
-            for (Object object : jsonArray) {
-                ean = ((JSONObject) object).getString("EAN");
-                produto.setEAN(ean);
-                rows = productDao.getRows(produto);
+                    List<Produto> produtoList = produtoDao.findByCodigoBarra(ean);
+                    if(produtoList != null ){
+                        for (Produto produto : produtoList) {
 
-                if (rows > 1) {
-                    Logger.info(this.getClass(), "[" + rows + "] EAN: " + ean);
-                }
-            }
-        }
-        ConnectionU.close();
+                            // Update or Create PMC
+                            produtoPmc = new ProdutoPmc();
+                            produtoPmc.setProd_cod(produto.getCodigo());
+                            produtoPmc.setAliquota(Double.valueOf(aliquota));
+                            produtoPmc.setPreco_maximo_consumidor(pmc);
 
-    }
+                            if (pmc > 0) {
+                                System.out.println("PMC: " + produtoPmc.getPreco_maximo_consumidor() + " -> " + pmc );
+                                if(produtoPmcDao.has(produtoPmc)){
+                                    produtoPmcDao.update(produtoPmc);
+                                }else{
+                                    produtoPmcDao.create(produtoPmc);
+                                }
+                            }
 
-    public void setPF17(JSONArray jsonArray) {
-        if (Boolean.TRUE.equals(ConnectionU.connect())) {
-            produto = new Produto();
-            for (Object object : jsonArray) {
-                String pf17 = ((JSONObject) object).getString("PF_17");
-                String ean = ((JSONObject) object).getString("EAN");
+                            // Update PF
+                            System.out.println("PF: " + produto.getPreco_fabricante() + " -> " + pf );
+                            System.out.println("NCM: " + produto.getCodigo_ncm() + " -> " + ncm );
 
-                if (!pf17.equals("0.00")) {
-                    produto.setEAN(ean);
-                    produto.setPF_17(pf17);
-                    Integer i = productDao.setPF17(produto);
-                    if (i > 0) {
-                        Logger.info(this.getClass(), "[" + i + "] EAN: " + produto.getEAN() + " PF17: " + produto.getPF_17());
+                            //Se PF
+                            produto.setPreco_fabricante(pf);
+                            if(produto.getAliquota_abc_farma().equals(Double.valueOf(aliquota))){
+                                produtoDao.update(produto);
+                            }
+
+                            //Se NCM
+                            produto.setCodigo_ncm(ncm);
+                            produtoDao.update(produto);
+
+                        }
                     }
-                }
-                produto = new Produto();
+                    break;
+                default:
+                    throw new RuntimeException("Aliquota " + aliquota + " não existe na ABCFARMA");
             }
         }
-        ConnectionU.close();
     }
 }

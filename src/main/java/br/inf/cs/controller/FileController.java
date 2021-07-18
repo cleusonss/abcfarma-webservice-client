@@ -16,6 +16,7 @@
 
 package br.inf.cs.controller;
 
+import br.inf.cs.Runner;
 import br.inf.cs.logging.Logger;
 import br.inf.cs.model.Pagina;
 import br.inf.cs.service.PaginaService;
@@ -57,9 +58,7 @@ public class FileController {
             pagina = processPagina(i);
 
             Logger.info(this.getClass(), "Pagina: " + pagina.getPagina() + "/" + pagina.getTotal_paginas());
-            productService.setPF17(pagina.getData());
-            productService.setPMC17(pagina.getData());
-            productService.getCheckRows(pagina.getData());
+            productService.saveJsonOnDatabase(pagina.getData(), Runner.aliquota);
 
             i++;
         } while (i <= pagina.getTotal_paginas());

@@ -21,14 +21,14 @@ import org.json.JSONObject;
 
 public class PaginaService {
 
-    private Pagina pagina = new Pagina();
+    private Pagina pagina;
 
     public Pagina getPagina() {
         return this.pagina;
     }
 
     public void setPagina(JSONObject jsonObject) {
-
+        pagina = new Pagina();
         if (isOK(jsonObject)) {
             this.pagina.setPagina(jsonObject.getString("pagina"));
             this.pagina.setLimit(jsonObject.getString("limit"));
@@ -66,10 +66,7 @@ public class PaginaService {
         if (!jsonObject.has("total_itens")) {
             return false;
         }
-        if (!jsonObject.has("data")) {
-            return false;
-        }
-        return true;
+        return jsonObject.has("data");
     }
 
     public Boolean isError(JSONObject jsonObject) {
@@ -85,9 +82,6 @@ public class PaginaService {
         if (!jsonObject.has("error_message")) {
             return false;
         }
-        if (!jsonObject.has("link")) {
-            return false;
-        }
-        return true;
+        return jsonObject.has("link");
     }
 }

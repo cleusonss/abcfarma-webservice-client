@@ -18,8 +18,7 @@ package br.inf.cs;
 
 import br.inf.cs.controller.ApiClientController;
 import br.inf.cs.controller.FileController;
-import br.inf.cs.data.ConnectionU;
-import br.inf.cs.logging.Logger;
+import br.inf.cs.data.DataSource;
 import br.inf.cs.model.Associado;
 import br.inf.cs.model.SoftwareHouse;
 
@@ -32,27 +31,32 @@ public class Runner {
     public static final String URI = "http://webserviceabcfarma.org.br/webservice/";
     public static Associado associado = new Associado();
     public static SoftwareHouse softwareHouse = new SoftwareHouse();
+    public static String aliquota;
 
     public static void main(String[] args) throws IOException {
 
         Properties properties = new Properties();
         properties.load(new FileInputStream("configuration.properties"));
 
-
         Runner.associado.setCnpj(properties.getProperty("cnpj"));
         Runner.associado.setSenha(properties.getProperty("senha"));
         Runner.softwareHouse.setCnpj(properties.getProperty("cnpj_sh"));
 
-        ConnectionU.server = properties.getProperty("server");
-        ConnectionU.port = properties.getProperty("port");
-        ConnectionU.databasename = properties.getProperty("name");
-        ConnectionU.user = properties.getProperty("user");
-        ConnectionU.password = properties.getProperty("password");
+        DataSource.server = properties.getProperty("server");
+        DataSource.port = properties.getProperty("port");
+        DataSource.databasename = properties.getProperty("name");
+        DataSource.user = properties.getProperty("user");
+        DataSource.password = properties.getProperty("password");
+        DataSource.connect();
 
-        ApiClientController apiClientController = new ApiClientController();
-        apiClientController.postAllPaginas();
+        Runner.aliquota = properties.getProperty("aliquota");
+
+        //ApiClientController apiClientController = new ApiClientController();
+        //apiClientController.postAllPaginas();
 
         FileController fileController = new FileController();
         fileController.processAllPaginas();
+
+        DataSource.close();
     }
 }
