@@ -51,8 +51,8 @@ public class Runner {
 
         Runner.aliquota = properties.getProperty("aliquota");
 
-        //ApiClientController apiClientController = new ApiClientController();
-        //apiClientController.postAllPaginas();
+        ApiClientController apiClientController = new ApiClientController();
+        apiClientController.postAllPaginas();
 
         FileController fileController = new FileController();
         fileController.processAllPaginas();
