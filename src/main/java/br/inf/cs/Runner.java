@@ -31,12 +31,12 @@ public class Runner {
     public static final String URI = "http://webserviceabcfarma.org.br/webservice/";
     public static Associado associado = new Associado();
     public static SoftwareHouse softwareHouse = new SoftwareHouse();
+    public static String aliquota;
 
     public static void main(String[] args) throws IOException {
 
         Properties properties = new Properties();
         properties.load(new FileInputStream("configuration.properties"));
-
 
         Runner.associado.setCnpj(properties.getProperty("cnpj"));
         Runner.associado.setSenha(properties.getProperty("senha"));
@@ -47,11 +47,16 @@ public class Runner {
         DataSource.databasename = properties.getProperty("name");
         DataSource.user = properties.getProperty("user");
         DataSource.password = properties.getProperty("password");
+        DataSource.connect();
 
-        ApiClientController apiClientController = new ApiClientController();
-        apiClientController.postAllPaginas();
+        Runner.aliquota = properties.getProperty("aliquota");
+
+        //ApiClientController apiClientController = new ApiClientController();
+        //apiClientController.postAllPaginas();
 
         FileController fileController = new FileController();
         fileController.processAllPaginas();
+
+        DataSource.close();
     }
 }

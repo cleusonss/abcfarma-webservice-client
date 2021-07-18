@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package br.inf.cs.dao;
+package br.inf.cs.data.dao;
 import org.junit.jupiter.api.Test;
 
-public class ProductDaoTest {
+public class ProductAbcFarmaDaoTest {
 
     @Test
     public void setPMC17(){

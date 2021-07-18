@@ -19,12 +19,12 @@ package br.inf.cs.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Produto implements Serializable {
+public class ProdutoAbcFarma implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String ID_PRODUTO;
-    private String EAN;
+    private Long EAN;
     private String REGISTRO_ANVISA;
     private String GGREM;
     private String NOME;
@@ -74,69 +74,7 @@ public class Produto implements Serializable {
     private String ID_TIPO_PRODUTO;
     private String DESCRICAO_TIPO_PRODUTO;
 
-    public Produto() {
-    }
-
-    public Produto(String ID_PRODUTO, String EAN, String REGISTRO_ANVISA, String GGREM, String NOME, String DESCRICAO,
-            String COMPOSICAO, String QTD_EMBALAGEM, String PF_20, String PMC_20, String PF_18, String PMC_18,
-            String PF_17, String PMC_17, String PF_17_5, String PMC_17_5, String PF_12, String PMC_12, String PF_0,
-            String PMC_0, String PERCENTUAL_IPI, String DATA_VIGENCIA, String NOVO, String VARIACAO_PRECO,
-            String PF_17_ALC, String PMC_17_ALC, String PF_17_5_ALC, String PMC_17_5_ALC, String PF_18_ALC,
-            String PMC_18_ALC, String NCM, String ID_TARJA, String CLASSE_TERAPEUTICA, String PORTARIA_344_98,
-            String PRODUTO_REFERENCIA, String CAS, String DCB, String ATC_CODE, String CAP, String CONFAZ_87,
-            String TISS_TUSS, String CEST, String ID_FABRICANTE, String NOME_FABRICANTE, String ID_LCCT,
-            String DESCRICAO_LISTA, String ID_REGIME_PRECO, String DESCRICAO_REGIME_PRECO, String ID_TIPO_PRODUTO,
-            String DESCRICAO_TIPO_PRODUTO) {
-        this.ID_PRODUTO = ID_PRODUTO;
-        this.EAN = EAN;
-        this.REGISTRO_ANVISA = REGISTRO_ANVISA;
-        this.GGREM = GGREM;
-        this.NOME = NOME;
-        this.DESCRICAO = DESCRICAO;
-        this.COMPOSICAO = COMPOSICAO;
-        this.QTD_EMBALAGEM = QTD_EMBALAGEM;
-        this.PF_20 = PF_20;
-        this.PMC_20 = PMC_20;
-        this.PF_18 = PF_18;
-        this.PMC_18 = PMC_18;
-        this.PF_17 = PF_17;
-        this.PMC_17 = PMC_17;
-        this.PF_17_5 = PF_17_5;
-        this.PMC_17_5 = PMC_17_5;
-        this.PF_12 = PF_12;
-        this.PMC_12 = PMC_12;
-        this.PF_0 = PF_0;
-        this.PMC_0 = PMC_0;
-        this.PERCENTUAL_IPI = PERCENTUAL_IPI;
-        this.DATA_VIGENCIA = DATA_VIGENCIA;
-        this.NOVO = NOVO;
-        this.VARIACAO_PRECO = VARIACAO_PRECO;
-        this.PF_17_ALC = PF_17_ALC;
-        this.PMC_17_ALC = PMC_17_ALC;
-        this.PF_17_5_ALC = PF_17_5_ALC;
-        this.PMC_17_5_ALC = PMC_17_5_ALC;
-        this.PF_18_ALC = PF_18_ALC;
-        this.PMC_18_ALC = PMC_18_ALC;
-        this.NCM = NCM;
-        this.ID_TARJA = ID_TARJA;
-        this.CLASSE_TERAPEUTICA = CLASSE_TERAPEUTICA;
-        this.PORTARIA_344_98 = PORTARIA_344_98;
-        this.PRODUTO_REFERENCIA = PRODUTO_REFERENCIA;
-        this.CAS = CAS;
-        this.DCB = DCB;
-        this.ATC_CODE = ATC_CODE;
-        this.CAP = CAP;
-        this.CONFAZ_87 = CONFAZ_87;
-        this.TISS_TUSS = TISS_TUSS;
-        this.CEST = CEST;
-        this.ID_FABRICANTE = ID_FABRICANTE;
-        this.NOME_FABRICANTE = NOME_FABRICANTE;
-        this.ID_LCCT = ID_LCCT;
-        this.DESCRICAO_LISTA = DESCRICAO_LISTA;
-        this.ID_REGIME_PRECO = ID_REGIME_PRECO;
-        this.DESCRICAO_REGIME_PRECO = DESCRICAO_REGIME_PRECO;
-        this.ID_TIPO_PRODUTO = ID_TIPO_PRODUTO;
-        this.DESCRICAO_TIPO_PRODUTO = DESCRICAO_TIPO_PRODUTO;
+    public ProdutoAbcFarma() {
     }
 
     public String getID_PRODUTO() {
@@ -147,11 +85,11 @@ public class Produto implements Serializable {
         this.ID_PRODUTO = ID_PRODUTO;
     }
 
-    public String getEAN() {
+    public Long getEAN() {
         return this.EAN;
     }
 
-    public void setEAN(String EAN) {
+    public void setEAN(Long EAN) {
         this.EAN = EAN;
     }
 
@@ -539,252 +477,252 @@ public class Produto implements Serializable {
         this.DESCRICAO_TIPO_PRODUTO = DESCRICAO_TIPO_PRODUTO;
     }
 
-    public Produto ID_PRODUTO(String ID_PRODUTO) {
+    public ProdutoAbcFarma ID_PRODUTO(String ID_PRODUTO) {
         setID_PRODUTO(ID_PRODUTO);
         return this;
     }
 
-    public Produto EAN(String EAN) {
+    public ProdutoAbcFarma EAN(Long EAN) {
         setEAN(EAN);
         return this;
     }
 
-    public Produto REGISTRO_ANVISA(String REGISTRO_ANVISA) {
+    public ProdutoAbcFarma REGISTRO_ANVISA(String REGISTRO_ANVISA) {
         setREGISTRO_ANVISA(REGISTRO_ANVISA);
         return this;
     }
 
-    public Produto GGREM(String GGREM) {
+    public ProdutoAbcFarma GGREM(String GGREM) {
         setGGREM(GGREM);
         return this;
     }
 
-    public Produto NOME(String NOME) {
+    public ProdutoAbcFarma NOME(String NOME) {
         setNOME(NOME);
         return this;
     }
 
-    public Produto DESCRICAO(String DESCRICAO) {
+    public ProdutoAbcFarma DESCRICAO(String DESCRICAO) {
         setDESCRICAO(DESCRICAO);
         return this;
     }
 
-    public Produto COMPOSICAO(String COMPOSICAO) {
+    public ProdutoAbcFarma COMPOSICAO(String COMPOSICAO) {
         setCOMPOSICAO(COMPOSICAO);
         return this;
     }
 
-    public Produto QTD_EMBALAGEM(String QTD_EMBALAGEM) {
+    public ProdutoAbcFarma QTD_EMBALAGEM(String QTD_EMBALAGEM) {
         setQTD_EMBALAGEM(QTD_EMBALAGEM);
         return this;
     }
 
-    public Produto PF_20(String PF_20) {
+    public ProdutoAbcFarma PF_20(String PF_20) {
         setPF_20(PF_20);
         return this;
     }
 
-    public Produto PMC_20(String PMC_20) {
+    public ProdutoAbcFarma PMC_20(String PMC_20) {
         setPMC_20(PMC_20);
         return this;
     }
 
-    public Produto PF_18(String PF_18) {
+    public ProdutoAbcFarma PF_18(String PF_18) {
         setPF_18(PF_18);
         return this;
     }
 
-    public Produto PMC_18(String PMC_18) {
+    public ProdutoAbcFarma PMC_18(String PMC_18) {
         setPMC_18(PMC_18);
         return this;
     }
 
-    public Produto PF_17(String PF_17) {
+    public ProdutoAbcFarma PF_17(String PF_17) {
         setPF_17(PF_17);
         return this;
     }
 
-    public Produto PMC_17(String PMC_17) {
+    public ProdutoAbcFarma PMC_17(String PMC_17) {
         setPMC_17(PMC_17);
         return this;
     }
 
-    public Produto PF_17_5(String PF_17_5) {
+    public ProdutoAbcFarma PF_17_5(String PF_17_5) {
         setPF_17_5(PF_17_5);
         return this;
     }
 
-    public Produto PMC_17_5(String PMC_17_5) {
+    public ProdutoAbcFarma PMC_17_5(String PMC_17_5) {
         setPMC_17_5(PMC_17_5);
         return this;
     }
 
-    public Produto PF_12(String PF_12) {
+    public ProdutoAbcFarma PF_12(String PF_12) {
         setPF_12(PF_12);
         return this;
     }
 
-    public Produto PMC_12(String PMC_12) {
+    public ProdutoAbcFarma PMC_12(String PMC_12) {
         setPMC_12(PMC_12);
         return this;
     }
 
-    public Produto PF_0(String PF_0) {
+    public ProdutoAbcFarma PF_0(String PF_0) {
         setPF_0(PF_0);
         return this;
     }
 
-    public Produto PMC_0(String PMC_0) {
+    public ProdutoAbcFarma PMC_0(String PMC_0) {
         setPMC_0(PMC_0);
         return this;
     }
 
-    public Produto PERCENTUAL_IPI(String PERCENTUAL_IPI) {
+    public ProdutoAbcFarma PERCENTUAL_IPI(String PERCENTUAL_IPI) {
         setPERCENTUAL_IPI(PERCENTUAL_IPI);
         return this;
     }
 
-    public Produto DATA_VIGENCIA(String DATA_VIGENCIA) {
+    public ProdutoAbcFarma DATA_VIGENCIA(String DATA_VIGENCIA) {
         setDATA_VIGENCIA(DATA_VIGENCIA);
         return this;
     }
 
-    public Produto NOVO(String NOVO) {
+    public ProdutoAbcFarma NOVO(String NOVO) {
         setNOVO(NOVO);
         return this;
     }
 
-    public Produto VARIACAO_PRECO(String VARIACAO_PRECO) {
+    public ProdutoAbcFarma VARIACAO_PRECO(String VARIACAO_PRECO) {
         setVARIACAO_PRECO(VARIACAO_PRECO);
         return this;
     }
 
-    public Produto PF_17_ALC(String PF_17_ALC) {
+    public ProdutoAbcFarma PF_17_ALC(String PF_17_ALC) {
         setPF_17_ALC(PF_17_ALC);
         return this;
     }
 
-    public Produto PMC_17_ALC(String PMC_17_ALC) {
+    public ProdutoAbcFarma PMC_17_ALC(String PMC_17_ALC) {
         setPMC_17_ALC(PMC_17_ALC);
         return this;
     }
 
-    public Produto PF_17_5_ALC(String PF_17_5_ALC) {
+    public ProdutoAbcFarma PF_17_5_ALC(String PF_17_5_ALC) {
         setPF_17_5_ALC(PF_17_5_ALC);
         return this;
     }
 
-    public Produto PMC_17_5_ALC(String PMC_17_5_ALC) {
+    public ProdutoAbcFarma PMC_17_5_ALC(String PMC_17_5_ALC) {
         setPMC_17_5_ALC(PMC_17_5_ALC);
         return this;
     }
 
-    public Produto PF_18_ALC(String PF_18_ALC) {
+    public ProdutoAbcFarma PF_18_ALC(String PF_18_ALC) {
         setPF_18_ALC(PF_18_ALC);
         return this;
     }
 
-    public Produto PMC_18_ALC(String PMC_18_ALC) {
+    public ProdutoAbcFarma PMC_18_ALC(String PMC_18_ALC) {
         setPMC_18_ALC(PMC_18_ALC);
         return this;
     }
 
-    public Produto NCM(String NCM) {
+    public ProdutoAbcFarma NCM(String NCM) {
         setNCM(NCM);
         return this;
     }
 
-    public Produto ID_TARJA(String ID_TARJA) {
+    public ProdutoAbcFarma ID_TARJA(String ID_TARJA) {
         setID_TARJA(ID_TARJA);
         return this;
     }
 
-    public Produto CLASSE_TERAPEUTICA(String CLASSE_TERAPEUTICA) {
+    public ProdutoAbcFarma CLASSE_TERAPEUTICA(String CLASSE_TERAPEUTICA) {
         setCLASSE_TERAPEUTICA(CLASSE_TERAPEUTICA);
         return this;
     }
 
-    public Produto PORTARIA_344_98(String PORTARIA_344_98) {
+    public ProdutoAbcFarma PORTARIA_344_98(String PORTARIA_344_98) {
         setPORTARIA_344_98(PORTARIA_344_98);
         return this;
     }
 
-    public Produto PRODUTO_REFERENCIA(String PRODUTO_REFERENCIA) {
+    public ProdutoAbcFarma PRODUTO_REFERENCIA(String PRODUTO_REFERENCIA) {
         setPRODUTO_REFERENCIA(PRODUTO_REFERENCIA);
         return this;
     }
 
-    public Produto CAS(String CAS) {
+    public ProdutoAbcFarma CAS(String CAS) {
         setCAS(CAS);
         return this;
     }
 
-    public Produto DCB(String DCB) {
+    public ProdutoAbcFarma DCB(String DCB) {
         setDCB(DCB);
         return this;
     }
 
-    public Produto ATC_CODE(String ATC_CODE) {
+    public ProdutoAbcFarma ATC_CODE(String ATC_CODE) {
         setATC_CODE(ATC_CODE);
         return this;
     }
 
-    public Produto CAP(String CAP) {
+    public ProdutoAbcFarma CAP(String CAP) {
         setCAP(CAP);
         return this;
     }
 
-    public Produto CONFAZ_87(String CONFAZ_87) {
+    public ProdutoAbcFarma CONFAZ_87(String CONFAZ_87) {
         setCONFAZ_87(CONFAZ_87);
         return this;
     }
 
-    public Produto TISS_TUSS(String TISS_TUSS) {
+    public ProdutoAbcFarma TISS_TUSS(String TISS_TUSS) {
         setTISS_TUSS(TISS_TUSS);
         return this;
     }
 
-    public Produto CEST(String CEST) {
+    public ProdutoAbcFarma CEST(String CEST) {
         setCEST(CEST);
         return this;
     }
 
-    public Produto ID_FABRICANTE(String ID_FABRICANTE) {
+    public ProdutoAbcFarma ID_FABRICANTE(String ID_FABRICANTE) {
         setID_FABRICANTE(ID_FABRICANTE);
         return this;
     }
 
-    public Produto NOME_FABRICANTE(String NOME_FABRICANTE) {
+    public ProdutoAbcFarma NOME_FABRICANTE(String NOME_FABRICANTE) {
         setNOME_FABRICANTE(NOME_FABRICANTE);
         return this;
     }
 
-    public Produto ID_LCCT(String ID_LCCT) {
+    public ProdutoAbcFarma ID_LCCT(String ID_LCCT) {
         setID_LCCT(ID_LCCT);
         return this;
     }
 
-    public Produto DESCRICAO_LISTA(String DESCRICAO_LISTA) {
+    public ProdutoAbcFarma DESCRICAO_LISTA(String DESCRICAO_LISTA) {
         setDESCRICAO_LISTA(DESCRICAO_LISTA);
         return this;
     }
 
-    public Produto ID_REGIME_PRECO(String ID_REGIME_PRECO) {
+    public ProdutoAbcFarma ID_REGIME_PRECO(String ID_REGIME_PRECO) {
         setID_REGIME_PRECO(ID_REGIME_PRECO);
         return this;
     }
 
-    public Produto DESCRICAO_REGIME_PRECO(String DESCRICAO_REGIME_PRECO) {
+    public ProdutoAbcFarma DESCRICAO_REGIME_PRECO(String DESCRICAO_REGIME_PRECO) {
         setDESCRICAO_REGIME_PRECO(DESCRICAO_REGIME_PRECO);
         return this;
     }
 
-    public Produto ID_TIPO_PRODUTO(String ID_TIPO_PRODUTO) {
+    public ProdutoAbcFarma ID_TIPO_PRODUTO(String ID_TIPO_PRODUTO) {
         setID_TIPO_PRODUTO(ID_TIPO_PRODUTO);
         return this;
     }
 
-    public Produto DESCRICAO_TIPO_PRODUTO(String DESCRICAO_TIPO_PRODUTO) {
+    public ProdutoAbcFarma DESCRICAO_TIPO_PRODUTO(String DESCRICAO_TIPO_PRODUTO) {
         setDESCRICAO_TIPO_PRODUTO(DESCRICAO_TIPO_PRODUTO);
         return this;
     }
@@ -793,41 +731,41 @@ public class Produto implements Serializable {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Produto)) {
+        if (!(o instanceof ProdutoAbcFarma)) {
             return false;
         }
-        Produto produto = (Produto) o;
-        return Objects.equals(ID_PRODUTO, produto.ID_PRODUTO) && Objects.equals(EAN, produto.EAN)
-                && Objects.equals(REGISTRO_ANVISA, produto.REGISTRO_ANVISA) && Objects.equals(GGREM, produto.GGREM)
-                && Objects.equals(NOME, produto.NOME) && Objects.equals(DESCRICAO, produto.DESCRICAO)
-                && Objects.equals(COMPOSICAO, produto.COMPOSICAO)
-                && Objects.equals(QTD_EMBALAGEM, produto.QTD_EMBALAGEM) && Objects.equals(PF_20, produto.PF_20)
-                && Objects.equals(PMC_20, produto.PMC_20) && Objects.equals(PF_18, produto.PF_18)
-                && Objects.equals(PMC_18, produto.PMC_18) && Objects.equals(PF_17, produto.PF_17)
-                && Objects.equals(PMC_17, produto.PMC_17) && Objects.equals(PF_17_5, produto.PF_17_5)
-                && Objects.equals(PMC_17_5, produto.PMC_17_5) && Objects.equals(PF_12, produto.PF_12)
-                && Objects.equals(PMC_12, produto.PMC_12) && Objects.equals(PF_0, produto.PF_0)
-                && Objects.equals(PMC_0, produto.PMC_0) && Objects.equals(PERCENTUAL_IPI, produto.PERCENTUAL_IPI)
-                && Objects.equals(DATA_VIGENCIA, produto.DATA_VIGENCIA) && Objects.equals(NOVO, produto.NOVO)
-                && Objects.equals(VARIACAO_PRECO, produto.VARIACAO_PRECO)
-                && Objects.equals(PF_17_ALC, produto.PF_17_ALC) && Objects.equals(PMC_17_ALC, produto.PMC_17_ALC)
-                && Objects.equals(PF_17_5_ALC, produto.PF_17_5_ALC)
-                && Objects.equals(PMC_17_5_ALC, produto.PMC_17_5_ALC) && Objects.equals(PF_18_ALC, produto.PF_18_ALC)
-                && Objects.equals(PMC_18_ALC, produto.PMC_18_ALC) && Objects.equals(NCM, produto.NCM)
-                && Objects.equals(ID_TARJA, produto.ID_TARJA)
-                && Objects.equals(CLASSE_TERAPEUTICA, produto.CLASSE_TERAPEUTICA)
-                && Objects.equals(PORTARIA_344_98, produto.PORTARIA_344_98)
-                && Objects.equals(PRODUTO_REFERENCIA, produto.PRODUTO_REFERENCIA) && Objects.equals(CAS, produto.CAS)
-                && Objects.equals(DCB, produto.DCB) && Objects.equals(ATC_CODE, produto.ATC_CODE)
-                && Objects.equals(CAP, produto.CAP) && Objects.equals(CONFAZ_87, produto.CONFAZ_87)
-                && Objects.equals(TISS_TUSS, produto.TISS_TUSS) && Objects.equals(CEST, produto.CEST)
-                && Objects.equals(ID_FABRICANTE, produto.ID_FABRICANTE)
-                && Objects.equals(NOME_FABRICANTE, produto.NOME_FABRICANTE) && Objects.equals(ID_LCCT, produto.ID_LCCT)
-                && Objects.equals(DESCRICAO_LISTA, produto.DESCRICAO_LISTA)
-                && Objects.equals(ID_REGIME_PRECO, produto.ID_REGIME_PRECO)
-                && Objects.equals(DESCRICAO_REGIME_PRECO, produto.DESCRICAO_REGIME_PRECO)
-                && Objects.equals(ID_TIPO_PRODUTO, produto.ID_TIPO_PRODUTO)
-                && Objects.equals(DESCRICAO_TIPO_PRODUTO, produto.DESCRICAO_TIPO_PRODUTO);
+        ProdutoAbcFarma produtoAbcFarma = (ProdutoAbcFarma) o;
+        return Objects.equals(ID_PRODUTO, produtoAbcFarma.ID_PRODUTO) && Objects.equals(EAN, produtoAbcFarma.EAN)
+                && Objects.equals(REGISTRO_ANVISA, produtoAbcFarma.REGISTRO_ANVISA) && Objects.equals(GGREM, produtoAbcFarma.GGREM)
+                && Objects.equals(NOME, produtoAbcFarma.NOME) && Objects.equals(DESCRICAO, produtoAbcFarma.DESCRICAO)
+                && Objects.equals(COMPOSICAO, produtoAbcFarma.COMPOSICAO)
+                && Objects.equals(QTD_EMBALAGEM, produtoAbcFarma.QTD_EMBALAGEM) && Objects.equals(PF_20, produtoAbcFarma.PF_20)
+                && Objects.equals(PMC_20, produtoAbcFarma.PMC_20) && Objects.equals(PF_18, produtoAbcFarma.PF_18)
+                && Objects.equals(PMC_18, produtoAbcFarma.PMC_18) && Objects.equals(PF_17, produtoAbcFarma.PF_17)
+                && Objects.equals(PMC_17, produtoAbcFarma.PMC_17) && Objects.equals(PF_17_5, produtoAbcFarma.PF_17_5)
+                && Objects.equals(PMC_17_5, produtoAbcFarma.PMC_17_5) && Objects.equals(PF_12, produtoAbcFarma.PF_12)
+                && Objects.equals(PMC_12, produtoAbcFarma.PMC_12) && Objects.equals(PF_0, produtoAbcFarma.PF_0)
+                && Objects.equals(PMC_0, produtoAbcFarma.PMC_0) && Objects.equals(PERCENTUAL_IPI, produtoAbcFarma.PERCENTUAL_IPI)
+                && Objects.equals(DATA_VIGENCIA, produtoAbcFarma.DATA_VIGENCIA) && Objects.equals(NOVO, produtoAbcFarma.NOVO)
+                && Objects.equals(VARIACAO_PRECO, produtoAbcFarma.VARIACAO_PRECO)
+                && Objects.equals(PF_17_ALC, produtoAbcFarma.PF_17_ALC) && Objects.equals(PMC_17_ALC, produtoAbcFarma.PMC_17_ALC)
+                && Objects.equals(PF_17_5_ALC, produtoAbcFarma.PF_17_5_ALC)
+                && Objects.equals(PMC_17_5_ALC, produtoAbcFarma.PMC_17_5_ALC) && Objects.equals(PF_18_ALC, produtoAbcFarma.PF_18_ALC)
+                && Objects.equals(PMC_18_ALC, produtoAbcFarma.PMC_18_ALC) && Objects.equals(NCM, produtoAbcFarma.NCM)
+                && Objects.equals(ID_TARJA, produtoAbcFarma.ID_TARJA)
+                && Objects.equals(CLASSE_TERAPEUTICA, produtoAbcFarma.CLASSE_TERAPEUTICA)
+                && Objects.equals(PORTARIA_344_98, produtoAbcFarma.PORTARIA_344_98)
+                && Objects.equals(PRODUTO_REFERENCIA, produtoAbcFarma.PRODUTO_REFERENCIA) && Objects.equals(CAS, produtoAbcFarma.CAS)
+                && Objects.equals(DCB, produtoAbcFarma.DCB) && Objects.equals(ATC_CODE, produtoAbcFarma.ATC_CODE)
+                && Objects.equals(CAP, produtoAbcFarma.CAP) && Objects.equals(CONFAZ_87, produtoAbcFarma.CONFAZ_87)
+                && Objects.equals(TISS_TUSS, produtoAbcFarma.TISS_TUSS) && Objects.equals(CEST, produtoAbcFarma.CEST)
+                && Objects.equals(ID_FABRICANTE, produtoAbcFarma.ID_FABRICANTE)
+                && Objects.equals(NOME_FABRICANTE, produtoAbcFarma.NOME_FABRICANTE) && Objects.equals(ID_LCCT, produtoAbcFarma.ID_LCCT)
+                && Objects.equals(DESCRICAO_LISTA, produtoAbcFarma.DESCRICAO_LISTA)
+                && Objects.equals(ID_REGIME_PRECO, produtoAbcFarma.ID_REGIME_PRECO)
+                && Objects.equals(DESCRICAO_REGIME_PRECO, produtoAbcFarma.DESCRICAO_REGIME_PRECO)
+                && Objects.equals(ID_TIPO_PRODUTO, produtoAbcFarma.ID_TIPO_PRODUTO)
+                && Objects.equals(DESCRICAO_TIPO_PRODUTO, produtoAbcFarma.DESCRICAO_TIPO_PRODUTO);
     }
 
     @Override

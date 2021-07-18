@@ -8,34 +8,34 @@ public class ProdutoPmc implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    Integer prod_cod;
-    Float aliquota;
-    Float preco_maximo_consumidor;
+    String prod_codigo;
+    Double aliquota;
+    Double preco_maximo_consumidor;
     Date ultima_alteracao;
 
     public ProdutoPmc() {}
 
-    public Integer getProd_cod() {
-        return prod_cod;
+    public String getProd_cod() {
+        return prod_codigo;
     }
 
-    public void setProd_cod(Integer prod_cod) {
-        this.prod_cod = prod_cod;
+    public void setProd_cod(String prod_codigo) {
+        this.prod_codigo = prod_codigo;
     }
 
-    public Float getAliquota() {
+    public Double getAliquota() {
         return aliquota;
     }
 
-    public void setAliquota(Float aliquota) {
+    public void setAliquota(Double aliquota) {
         this.aliquota = aliquota;
     }
 
-    public Float getPreco_maximo_consumidor() {
+    public Double getPreco_maximo_consumidor() {
         return preco_maximo_consumidor;
     }
 
-    public void setPreco_maximo_consumidor(Float preco_maximo_consumidor) {
+    public void setPreco_maximo_consumidor(Double preco_maximo_consumidor) {
         this.preco_maximo_consumidor = preco_maximo_consumidor;
     }
 
@@ -52,11 +52,11 @@ public class ProdutoPmc implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProdutoPmc that = (ProdutoPmc) o;
-        return Objects.equals(prod_cod, that.prod_cod) && Objects.equals(aliquota, that.aliquota) && Objects.equals(preco_maximo_consumidor, that.preco_maximo_consumidor) && Objects.equals(ultima_alteracao, that.ultima_alteracao);
+        return Objects.equals(prod_codigo, that.prod_codigo) && Objects.equals(aliquota, that.aliquota) && Objects.equals(preco_maximo_consumidor, that.preco_maximo_consumidor) && Objects.equals(ultima_alteracao, that.ultima_alteracao);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(prod_cod, aliquota, preco_maximo_consumidor, ultima_alteracao);
+        return Objects.hash(prod_codigo, aliquota, preco_maximo_consumidor, ultima_alteracao);
     }
 }

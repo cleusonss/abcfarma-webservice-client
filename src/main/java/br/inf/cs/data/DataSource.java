@@ -30,6 +30,7 @@ public class DataSource {
 
     public static Connection connection = null;
     public static Statement statement = null;
+    public static PreparedStatement preparedStatement = null;
 
     private static DataSource dataSource = null;
 
@@ -43,6 +44,14 @@ public class DataSource {
 
     public static DataSource getInstance() {
         return dataSource;
+    }
+
+    public static Connection getConnection() {
+        return connection;
+    }
+
+    public static Statement getStatement() {
+        return statement;
     }
 
     public static Boolean connect() {
