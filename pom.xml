@@ -11,7 +11,7 @@
     </parent>
     <groupId>br.inf.cs</groupId>
     <artifactId>abcfarma-webservice-client</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
 
     <name>abcfarma-webservice-client</name>
     <url>https://github.com/cleusonss/abcfarma-webservice-client</url>
