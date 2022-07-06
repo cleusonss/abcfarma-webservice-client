@@ -16,8 +16,10 @@
 
 package br.inf.cs.service;
 
+import br.inf.cs.data.daoImpl.PrincipioAtivoDaoImpl;
 import br.inf.cs.data.daoImpl.ProdutoDaoImpl;
 import br.inf.cs.data.daoImpl.ProdutoPmcDaoImpl;
+import br.inf.cs.model.PrincipioAtivo;
 import br.inf.cs.model.Produto;
 import br.inf.cs.model.ProdutoPmc;
 import org.json.JSONArray;
@@ -26,7 +28,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-public class ProductService {
+public class ProdutoService {
 
     ProdutoDaoImpl produtoDao = new ProdutoDaoImpl();
     ProdutoPmcDaoImpl produtoPmcDao = new ProdutoPmcDaoImpl();
@@ -84,6 +86,16 @@ public class ProductService {
                             //Se NCM
                             produto.setCodigo_ncm(ncm);
                             produtoDao.update(produto);
+
+                            //Se Principio Ativo
+                            PrincipioAtivo principioAtivo = new PrincipioAtivo();
+                            PrincipioAtivoDaoImpl principioAtivoDao = new PrincipioAtivoDaoImpl();
+                            String composicao = ((JSONObject) object).getString("COMPOSICAO");
+                            System.out.println(composicao);
+                            List<PrincipioAtivo> listPrincipioAtivo = principioAtivoDao.findByNome(composicao);
+                            if(listPrincipioAtivo == null){
+                                System.out.println("NH:  "+ composicao);
+                            }
 
                         }
                     }

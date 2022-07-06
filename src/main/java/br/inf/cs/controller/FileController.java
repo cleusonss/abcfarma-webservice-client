@@ -19,17 +19,22 @@ package br.inf.cs.controller;
 import br.inf.cs.Runner;
 import br.inf.cs.logging.Logger;
 import br.inf.cs.model.Pagina;
+import br.inf.cs.model.PrincipioAtivo;
 import br.inf.cs.service.PaginaService;
-import br.inf.cs.service.ProductService;
+import br.inf.cs.service.PrincipioAtivoService;
+import br.inf.cs.service.ProdutoService;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FileController {
 
-    ProductService productService = new ProductService();
+    ProdutoService produtoService = new ProdutoService();
+    PrincipioAtivoService principioAtivoService = new PrincipioAtivoService();
 
     public FileController() {
     }
@@ -53,14 +58,17 @@ public class FileController {
 
     public void processAllPaginas() throws IOException {
         Pagina pagina;
+        Set<PrincipioAtivo> set = new HashSet<>();
         int i = 1;
         do {
             pagina = processPagina(i);
 
             Logger.info(this.getClass(), "Pagina: " + pagina.getPagina() + "/" + pagina.getTotal_paginas());
-            productService.saveJsonOnDatabase(pagina.getData(), Runner.aliquota);
-
+            produtoService.saveJsonOnDatabase(pagina.getData(), Runner.aliquota);
+            principioAtivoService.saveJsonOnDatabase(pagina.getData(), Boolean.TRUE);
+            set.addAll(principioAtivoService.JSONArrayToSet(pagina.getData()));
             i++;
         } while (i <= pagina.getTotal_paginas());
+        principioAtivoService.saveSetOnDatabase(set);
     }
 }
