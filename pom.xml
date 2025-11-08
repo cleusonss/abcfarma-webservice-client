@@ -35,7 +35,7 @@
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>9.2.1.jre11</version>
+            <version>10.2.4.jre8</version>
         </dependency>
 
         <!-- Spring Boot -->
